@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+flask
+streamlit
+mysql-connector-python
+bcrypt
+joblib
+reportlab
+matplotlib
+pymongo
