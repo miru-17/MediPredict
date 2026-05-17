@@ -123,7 +123,7 @@ Flask is used as the backend framework because:
 ## Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/medipredict.git
+git clone https://github.com/miru-17/medipredict.git
 ```
 
 ## Step 2: Navigate to the Project Directory
