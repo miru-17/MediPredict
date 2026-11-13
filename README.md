@@ -208,9 +208,4 @@ This project is developed for educational and learning purposes.
 
 ---
 
-# Contact
 
-For any queries or suggestions:
-
-* LinkedIn: [https://www.linkedin.com/in/mirudhula-kathirvel-64507a296](https://www.linkedin.com/in/mirudhula-kathirvel-64507a296)
-* GitHub: [https://github.com/](https://github.com/)
