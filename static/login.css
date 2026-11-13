@@ -1,0 +1,89 @@
+/* Background used by signup & login */
+.bg {
+    min-height: 100vh;
+    background: url("images/bg.png") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Main form container */
+.form-container {
+    width: 420px;                 /* BIG container */
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 230, 255, 0.4);
+    animation: glowPulse 2.5s infinite alternate;
+}
+
+/* Extra glow for login */
+.login-glow {
+    box-shadow:
+        0 0 20px rgba(0, 230, 255, 0.5),
+        0 0 40px rgba(0, 123, 255, 0.4);
+}
+
+/* Heading */
+.form-container h1 {
+    font-weight: 800;             /* BOLD font */
+    margin-bottom: 25px;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+.form-container input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-weight: 600;             /* Bold input text */
+}
+
+/* Button */
+.form-container button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #00e6ff, #007bff);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00e6ff;
+}
+
+/* Switch text */
+.switch {
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+.switch a {
+    color: #007bff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    from {
+        box-shadow: 0 0 20px rgba(0, 230, 255, 0.4);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(0, 123, 255, 0.6);
+    }
+}
+/* Login logo */
+

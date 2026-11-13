@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MediPredict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+<header class="main-header">
+    <h1>MediPredict – HealthRisk Analyser</h1>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Medipredict</h2>
+        <ul>
+            <li><a href="/predict">Predict Disease</a></li>
+            <li><a href="{{ url_for('recommendations') }}"> View Health Recommendations</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+
+</div>
+
+</body>
+</html>

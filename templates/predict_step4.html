@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial;
+
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* Header */
+
+.header{
+
+background:#0d2a52;
+color:white;
+padding:35px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:105px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+
+}
+
+.sidebar a{
+
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+font-size:16px;
+
+}
+
+.sidebar a:hover{
+
+background:#e11d48;
+
+}
+
+/* Main */
+
+.main{
+
+margin-left:240px;
+margin-top:120px;
+padding:40px;
+
+}
+
+/* Container */
+
+.category-box{
+
+background:white;
+
+width:1000px;
+
+margin:auto;
+
+padding:50px;
+
+border-radius:15px;
+
+box-shadow:0 0 40px rgba(0,0,0,0.3);
+
+}
+
+/* Grid */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+/* Card */
+
+.card{
+
+display:flex;
+
+align-items:center;
+
+padding:25px;
+
+border-radius:12px;
+
+background:#f1f5f9;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+background:#2563eb;
+
+color:white;
+
+transform:scale(1.05);
+
+box-shadow:0 0 30px #2563eb;
+
+}
+
+/* Icons */
+
+.card img{
+
+width:90px;
+
+height:90px;
+
+margin-right:25px;
+
+}
+
+/* Text */
+
+.card span{
+
+font-size:22px;
+
+font-weight:bold;
+
+}
+
+/* Button */
+
+.next-btn{
+
+width:100%;
+
+padding:16px;
+
+font-size:20px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:8px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:35px;
+
+transition:.3s;
+
+}
+
+.next-btn:hover{
+
+box-shadow:0 0 20px #2563eb;
+
+transform:scale(1.03);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#"> View Health Recommendations</a>
+<a href="#">Profile</a>
+<!--<a href="#">Download Report</a>-->
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="category-box">
+
+<h2>Select Symptom Category</h2>
+
+<div class="grid">
+
+
+<div class="card"
+onclick="location.href='/symptoms/general'">
+
+<img src="{{url_for('static',filename='icons/general.png')}}">
+
+<span>General Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/skin'">
+
+<img src="{{url_for('static',filename='icons/skin.png')}}">
+
+<span>Skin Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/respiratory'">
+
+<img src="{{url_for('static',filename='icons/lungs.png')}}">
+
+<span>Respiratory Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/heart'">
+
+<img src="{{url_for('static',filename='icons/heart.png')}}">
+
+<span>Heart Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/neuro'">
+
+<img src="{{url_for('static',filename='icons/brain.png')}}">
+
+<span>Neurological Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/musculoskeletal'">
+
+<img src="{{url_for('static',filename='icons/bone.png')}}">
+
+<span>Musculoskeletal</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/digestive'">
+
+<img src="{{url_for('static',filename='icons/stomach.png')}}">
+
+<span>Digestive Symptoms</span>
+
+</div>
+
+
+<div class="card"
+onclick="location.href='/symptoms/urinary'">
+
+<img src="{{url_for('static',filename='icons/kidney.png')}}">
+
+<span>Kidney Symptoms</span>
+
+</div>
+
+
+</div>
+
+
+<button class="next-btn">
+
+Continue →
+
+</button>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:30px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:95px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+.main{
+margin-left:240px;
+margin-top:110px;
+padding:40px;
+}
+
+.symptom-box{
+
+background:white;
+width:1000px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+
+}
+
+.symptom{
+
+padding:12px;
+border-radius:8px;
+background:#f1f5f9;
+font-size:17px;
+
+}
+
+.symptom:hover{
+
+background:#dbeafe;
+
+}
+
+.next-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin-top:20px;
+
+}
+
+.prev-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#6b7280;
+color:white;
+cursor:pointer;
+margin-top:10px;
+
+}
+
+.progress{
+
+font-weight:bold;
+color:#2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#">View Health Recommendations</a>
+<a href="#">View Profile</a>
+
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="symptom-box">
+
+<h2>Respiratory Symptoms</h2>
+
+<p class="progress">
+</p>
+
+
+<form method="POST">
+
+<div class="grid">
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="blood_in_sputum">
+blood_in_sputum
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="rusty_sputum">
+rusty_sputum
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="mucoid_sputum">
+mucoid_sputum
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="watering_from_eyes">
+watering_from_eyes
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="loss_of_smell">
+loss_of_smell
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="chest_pain">
+chest_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="congestion">
+congestion
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="runny_nose">
+runny_nose
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="sinus_pressure">
+sinus_pressure
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="redness_of_eyes">
+redness_of_eyes
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="throat_irritation">
+throat_irritation
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="phlegm">
+phlegm
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="breathlessness">
+breathlessness
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="cough">
+cough
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="patches_in_throat">
+patches_in_throat
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="continuous_sneezing">
+continuous_sneezing
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="pain_behind_the_eyes">
+pain_behind_the_eyes
+</label>
+
+</div>
+
+
+<button type="submit" class="next-btn">
+
+Next Category →
+
+</button>
+
+
+
+    <button
+type="button"
+class="prev-btn"
+onclick="window.location.href='/symptoms/skin'">
+
+← Previous
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

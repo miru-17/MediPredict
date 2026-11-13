@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heart Diet Plan</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:#0d2a52;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:bold;
+    z-index:1000;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    height:calc(100vh - 70px);
+
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:220px;
+    margin-top:70px;
+
+    height:calc(100vh - 70px);
+    display:flex;
+    flex-direction:column;
+
+    background:url("/static/images/bg.png") no-repeat center center;
+    background-size:cover;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    padding:40px;
+    overflow-y:auto;
+}
+
+/* TITLE */
+.content h1{
+    text-align:center;
+    color:#0A1F44;
+    text-shadow:0 0 20px #00f2fe;
+    margin-bottom:40px;
+}
+
+/* SECTION CARD */
+.section{
+    margin:25px auto;
+    max-width:900px;
+    padding:25px;
+    border-radius:20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+
+    transition:0.3s;
+}
+
+.section:hover{
+    transform:scale(1.02);
+    box-shadow:
+        0 0 30px #00f2fe,
+        0 0 60px #00f2fe;
+}
+
+/* SECTION TITLE */
+.section h2{
+    margin-bottom:15px;
+    color:#0A1F44;
+}
+
+/* LIST */
+.section ul{
+    padding-left:20px;
+}
+
+.section ul li{
+    margin-bottom:10px;
+}
+
+/* BACK BUTTON */
+.btn{
+    text-align:center;
+    margin-top:40px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px #00f2fe;
+}
+
+.btn a:hover{
+    background:#0ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    MediPredict – Heart Diet Plan
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="content">
+
+<h1>Heart-Healthy Dietary Plan</h1>
+
+<!-- PRINCIPLES -->
+<div class="section">
+    <h2>❤️ Core Dietary Principles</h2>
+    <ul>
+        <li><b>Increase Fiber:</b> Whole-wheat bread, brown rice, quinoa, oatmeal, beans, lentils</li>
+        <li><b>Healthy Fats:</b> Olive oil, canola oil, nuts, avocados (avoid butter & coconut oil)</li>
+        <li><b>Lean Proteins:</b> Fish, poultry, plant-based proteins (limit red meat)</li>
+        <li><b>Reduce Sodium & Sugar:</b> Less than 1500–2300 mg sodium daily</li>
+        <li><b>Increase Fruits & Vegetables:</b> Leafy greens and berries</li>
+    </ul>
+</div>
+
+<!-- MEAL IDEAS -->
+<div class="section">
+    <h2>🍽️ Sample Meal Ideas</h2>
+    <ul>
+        <li><b>Breakfast:</b> Oatmeal with flaxseeds & berries OR egg white scramble</li>
+        <li><b>Lunch:</b> Salad with vegetables, beans, chicken/salmon & olive oil dressing</li>
+        <li><b>Dinner:</b> Baked fish with brown rice and steamed broccoli</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>🥜 Healthy Snacks</h2>
+
+    <ul>
+        <li><b>Fruits & Vegetables:</b><br>
+        Apples, pears, grapes, papaya, citrus fruits – high in fiber and antioxidants.<br>
+        Carrot, cucumber, bell pepper, broccoli, cauliflower – crunchy, low-calorie, nutrient-dense.<br>
+        Beets & cruciferous veggies (broccoli, cabbage, kale) – support blood pressure regulation.</li>
+
+        <li><b>Nuts & Seeds:</b><br>
+        Walnuts, almonds, flaxseeds, chia seeds – rich in omega-3 fats, magnesium, and fiber.<br>
+        Trail mix with walnuts & tart cherries – combines anti-inflammatory antioxidants with healthy fats.</li>
+
+        <li><b>Protein-Rich Snacks:</b><br>
+        Boiled eggs (moderation) – provide protein and essential nutrients.<br>
+        Roasted chickpeas or hummus with veggies – plant-based protein and fiber.<br>
+        Fatty fish (sardines, salmon, tuna) – excellent source of omega-3 fatty acids.</li>
+
+        <li><b>Whole Grains:</b><br>
+        Air-popped popcorn – whole grain, low-calorie, heart-friendly when unsalted.<br>
+        Whole-grain crackers with low-sodium tuna or salmon – combines fiber with lean protein.</li>
+
+        <li><b>Dairy & Alternatives:</b><br>
+        Low-fat yogurt with fruit – probiotics plus antioxidants.<br>
+        Fat-free cottage cheese with pear/apple slices – protein-rich, low in saturated fat.</li>
+
+        <li><b>Drinks:</b><br>
+        Matcha green tea – rich in EGCG, reduces inflammation and arterial plaque.<br>
+        Unsweetened tea/coffee, sparkling water with citrus – hydrating without added sugars.</li>
+    </ul>
+</div>
+
+<!-- AVOID -->
+<div class="section">
+    <h2>🚫 Foods to Avoid / Limit</h2>
+    <ul>
+        <li><b>Trans fats:</b> Processed snacks, hydrogenated oils</li>
+        <li><b>Saturated fats:</b> Butter, cheese, fatty meat, fast food</li>
+        <li><b>Refined carbs:</b> White bread, pasta, pastries</li>
+        <li><b>Sugary drinks:</b> Soda, sweetened beverages</li>
+    </ul>
+</div>
+
+<div class="btn">
+    <a href="/diet">⬅ Back</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

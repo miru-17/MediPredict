@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E7FEFE;
+}
+
+.container {
+    display: flex;
+    height: 500vh;
+}
+
+/* ================= Sidebar (UNCHANGED) ================= */
+.sidebar {
+    width: 240px;
+    background-color: #F5275B;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ================= Main Content ================= */
+.main {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* ================= Header (UNCHANGED) ================= */
+.main-header {
+    width: 100%;
+    height: 120px;
+    background-color: #0a1f44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.main-header h1 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ================= Dashboard Background ================= */
+.dashboard-bg {
+    height: calc(100vh - 120px);
+    background-image: url("/static/images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;     /* ✅ FIX: logo fits fully */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* ================= Transparent Overlay Container ================= */
+.overlay-content {
+    width: 70%;
+    max-width: 900px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.25); /* ✅ transparent */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+/* Text inside overlay */
+.overlay-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0a1f44;
+}
+
+.overlay-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #0a1f44;
+}

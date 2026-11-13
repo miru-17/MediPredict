@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:30px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:95px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+.main{
+margin-left:240px;
+margin-top:110px;
+padding:40px;
+}
+
+.symptom-box{
+background:white;
+width:1000px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+}
+
+.symptom{
+padding:14px;
+border-radius:8px;
+background:#f1f5f9;
+font-size:17px;
+}
+
+.symptom:hover{
+background:#dbeafe;
+}
+
+.next-btn{
+width:100%;
+padding:15px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+.predict-btn{
+width:100%;
+padding:16px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+background:#16a34a;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+.prev-btn{
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#6b7280;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+.progress{
+font-weight:bold;
+color:#2563eb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<a href="#">View Health Recommendations</a>
+<a href="#">View Profile</a>
+
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="symptom-box">
+
+<h2>Musculoskeletal Symptoms</h2>
+
+<p class="progress">
+
+Muscle • Bone • Joint Symptoms
+
+</p>
+
+
+<!-- FIXED HERE (removed wrong action) -->
+<form method="POST">
+
+<div class="grid">
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="muscle_pain">
+muscle_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="muscle_weakness">
+muscle_weakness
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="muscle_wasting">
+muscle_wasting
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="joint_pain">
+joint_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="swelling_joints">
+swelling_joints
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="knee_pain">
+knee_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="hip_joint_pain">
+hip_joint_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="back_pain">
+back_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="neck_pain">
+neck_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="movement_stiffness">
+movement_stiffness
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="stiff_neck">
+stiff_neck
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="painful_walking">
+painful_walking
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="weakness_in_limbs">
+weakness_in_limbs
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="cramps">
+cramps
+</label>
+
+</div>
+
+
+<div style="margin-top:25px;">
+
+<button type="submit" class="next-btn">
+Next →
+</button>
+
+<button
+type="button"
+class="prev-btn"
+onclick="window.location.href='{{url_for('symptoms_neuro')}}'">
+
+← Previous
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise Recommendations</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:#0d2a52;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+    z-index:1000;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    height:calc(100vh - 70px);
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:220px;
+    margin-top:70px;
+    height:calc(100vh - 70px);
+    background:url("/static/images/bg.png") no-repeat center center;
+    background-size:cover;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    height:100%;
+    overflow-y:auto;
+    padding:40px;
+}
+
+/* TITLE */
+.content h1{
+    text-align:center;
+    color:#0A1F44;
+    text-shadow:0 0 20px #00f2fe;
+    margin-bottom:40px;
+}
+.card{
+    width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Keep title & image centered */
+.card h2,
+.exercise-img{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* MAIN LIST */
+.points{
+    text-align: left;        /* ✅ LEFT ALIGN TEXT */
+    padding-left: 20px;      /* ✅ BULLET ALIGNMENT */
+}
+
+/* MAIN ITEMS */
+.points li{
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* SUB LIST */
+.sub-points{
+    padding-left: 25px;      /* ✅ PROPER INDENT */
+    margin-top: 5px;
+    list-style-type: circle; /* clean sub bullets */
+}
+
+/* SUB ITEMS */
+.sub-points li{
+    margin-bottom: 6px;
+}
+/* ===== CARD ===== */
+.card{
+    max-width:800px;
+    margin:25px auto;
+    padding:25px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 40px #00f2fe;
+}
+
+/* IMAGE */
+.card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    margin:15px 0;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.card h2{
+    margin-bottom:10px;
+    color:#0A1F44;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* BACK BUTTON */
+.btn{
+    text-align:center;
+    margin-top:30px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px #00f2fe;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    MediPredict – Exercise Guide
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/diet">Diet Plan</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+<div class="content">
+
+<h1>Daily Essential Exercises</h1>
+
+<!-- 1 -->
+<div class="card">
+
+    <h2>Brisk Walking</h2>
+
+    <img src="/static/images/walking.jpeg" class="exercise-img">
+
+    <ul class="points">
+        <li><strong>What:</strong> Improves heart health, stamina, and weight control.</li>
+
+        <li><strong>How:</strong>
+            <ul class="sub-points">
+                <li>Walk at a faster-than-normal pace</li>
+                <li>Keep your back straight and swing arms naturally</li>
+                <li>Breathe steadily</li>
+            </ul>
+        </li>
+
+        <li><strong>Time:</strong> 30–45 minutes daily</li>
+        <li><strong>Tip:</strong> Avoid slouching; land heel first, then toe</li>
+    </ul>
+
+</div>
+<!-- 2 -->
+<div class="card">
+<h2>Running</h2>
+<img src="/static/images/running.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves endurance and helps in calorie burning.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Start with a slow jog</li>
+        <li>Gradually increase your speed</li>
+        <li>Keep shoulders relaxed and arms bent</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 15–30 minutes</li>
+<li><strong>Tip:</strong> Warm up before running</li>
+</ul>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<h2>Cycling</h2>
+<img src="/static/images/cycling.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Strengthens leg muscles and improves stamina.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Adjust seat to proper height</li>
+        <li>Pedal smoothly without jerks</li>
+        <li>Maintain steady breathing</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 20–40 minutes</li>
+<li><strong>Tip:</strong> Avoid over-speeding</li>
+</ul>
+</div>
+<!-- 4 -->
+<div class="card">
+<h2>Swimming</h2>
+<img src="/static/images/swimming.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Provides a full-body workout with low joint stress.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Use controlled strokes</li>
+        <li>Coordinate breathing with movement</li>
+        <li>Maintain a steady rhythm</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 20–30 minutes</li>
+<li><strong>Tip:</strong> Focus on technique rather than speed</li>
+</ul>
+</div>
+<!-- 5 -->
+<div class="card">
+<h2>Jump Rope</h2>
+<img src="/static/images/jumping.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves coordination and burns calories.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Hold rope handles firmly</li>
+        <li>Jump lightly on your toes</li>
+        <li>Use wrists to rotate the rope</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 10–15 minutes</li>
+<li><strong>Tip:</strong> Keep jumps small to reduce strain</li>
+</ul>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<h2>Squats</h2>
+<img src="/static/images/squatsjpeg.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Builds leg strength and core stability.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Stand shoulder-width apart</li>
+        <li>Bend knees and lower hips</li>
+        <li>Return to standing position</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 10–15 × 3 sets</li>
+<li><strong>Tip:</strong> Keep back straight</li>
+</ul>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<h2>Push-Ups</h2>
+<img src="/static/images/pushups.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Strengthens chest, arms, and core.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Keep your body straight</li>
+        <li>Lower chest toward the floor</li>
+        <li>Push back up</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 8–12 × 3 sets</li>
+<li><strong>Tip:</strong> Do not bend hips</li>
+</ul>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<h2>Lunges</h2>
+<img src="/static/images/lunges.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves balance and strengthens legs.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Step forward with one leg</li>
+        <li>Lower body until knees bend</li>
+        <li>Push back to starting position</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 10 per leg</li>
+<li><strong>Tip:</strong> Keep torso upright</li>
+</ul>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<h2>Plank</h2>
+<img src="/static/images/plank.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Strengthens core muscles.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Support body on elbows and toes</li>
+        <li>Keep body straight</li>
+        <li>Hold the position</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 20–60 seconds</li>
+<li><strong>Tip:</strong> Do not drop hips</li>
+</ul>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<h2>Deadlifts</h2>
+<img src="/static/images/deadlifts.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves posture and back strength.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Bend knees slightly</li>
+        <li>Lift weight with straight back</li>
+        <li>Lower slowly</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 8–10 × 3 sets</li>
+<li><strong>Tip:</strong> Avoid rounding your back</li>
+</ul>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<h2>Surya Namaskar</h2>
+<img src="/static/images/suryanamaskar.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Full-body workout improving flexibility and strength.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Follow the 12-step yoga sequence</li>
+        <li>Synchronize movements with breathing</li>
+        <li>Maintain a steady flow</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 5–10 rounds</li>
+<li><strong>Tip:</strong> Perform slowly with proper breathing</li>
+</ul>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<h2>Cat-Cow Stretch</h2>
+<img src="/static/images/catcowstretch.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves spine flexibility and posture.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Inhale and arch your back (cow)</li>
+        <li>Exhale and round your spine (cat)</li>
+        <li>Repeat slowly with breathing</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 10–15</li>
+<li><strong>Tip:</strong> Move gently with breath</li>
+</ul>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<h2>Cobra Pose</h2>
+<img src="/static/images/cobrapose.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Strengthens lower back and improves flexibility.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Lie on your stomach</li>
+        <li>Place hands under shoulders</li>
+        <li>Lift chest upward gently</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 15–30 seconds</li>
+<li><strong>Tip:</strong> Avoid over-stretching</li>
+</ul>
+</div>
+
+<!-- 14 -->
+<div class="card">
+<h2>Child’s Pose</h2>
+<img src="/static/images/childpose.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Relaxes body and reduces stress.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Sit back on your heels</li>
+        <li>Stretch arms forward</li>
+        <li>Rest forehead on the ground</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 30–60 seconds</li>
+<li><strong>Tip:</strong> Focus on deep breathing</li>
+</ul>
+</div>
+<!-- 15 -->
+<div class="card">
+<h2>Pranayama</h2>
+<img src="/static/images/pranayama.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves lung capacity and relaxation.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Inhale slowly through nose</li>
+        <li>Exhale slowly and steadily</li>
+        <li>Maintain a calm rhythm</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 5–10 minutes</li>
+<li><strong>Tip:</strong> Practice in a quiet place</li>
+</ul>
+</div>
+
+<!-- 16 -->
+<div class="card">
+<h2>Deep Breathing</h2>
+<img src="/static/images/breathing.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Reduces stress and increases oxygen flow.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Inhale deeply for 4 seconds</li>
+        <li>Hold for a moment</li>
+        <li>Exhale slowly for 6 seconds</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 5–10 minutes</li>
+<li><strong>Tip:</strong> Use diaphragm breathing</li>
+</ul>
+</div>
+<!-- 17 -->
+<div class="card">
+<h2>Single Leg Stand</h2>
+<img src="/static/images/singleleg.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves balance and stability.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Stand on one leg</li>
+        <li>Keep your body stable</li>
+        <li>Switch legs after holding</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 30 seconds each leg</li>
+<li><strong>Tip:</strong> Focus on a fixed point</li>
+</ul>
+</div>
+<!-- 18 -->
+<div class="card">
+<h2>Step-Ups</h2>
+<img src="/static/images/step.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Strengthens legs and improves endurance.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Step onto a platform or stair</li>
+        <li>Push your body upward</li>
+        <li>Step down slowly</li>
+    </ul>
+</li>
+
+<li><strong>Reps:</strong> 10–15 each leg</li>
+<li><strong>Tip:</strong> Maintain control while stepping</li>
+</ul>
+</div>
+
+<!-- 19 -->
+<div class="card">
+<h2>Light Stretching</h2>
+<img src="/static/images/lightstretching.jpeg" class="exercise-img">
+
+<ul class="points">
+<li><strong>What:</strong> Improves flexibility and prevents stiffness.</li>
+
+<li><strong>How:</strong>
+    <ul class="sub-points">
+        <li>Stretch arms, legs, and back gently</li>
+        <li>Hold each stretch briefly</li>
+        <li>Relax your muscles</li>
+    </ul>
+</li>
+
+<li><strong>Time:</strong> 10–15 minutes</li>
+<li><strong>Tip:</strong> Avoid sudden movements</li>
+</ul>
+</div>
+
+<div class="btn">
+<a href="/dashboard">⬅ Back</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

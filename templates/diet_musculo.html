@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Musculoskeletal Diet Plan</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:#0d2a52;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:bold;
+    z-index:1000;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    height:calc(100vh - 70px);
+
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:220px;
+    margin-top:70px;
+
+    height:calc(100vh - 70px);
+    display:flex;
+    flex-direction:column;
+
+    background:url("/static/images/bg.png") no-repeat center center;
+    background-size:cover;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    padding:40px;
+    overflow-y:auto;
+}
+
+/* TITLE */
+.content h1{
+    text-align:center;
+    color:#0A1F44;
+    text-shadow:0 0 20px #00f2fe;
+    margin-bottom:40px;
+}
+
+/* SECTION CARD */
+.section{
+    margin:25px auto;
+    max-width:900px;
+    padding:25px;
+    border-radius:20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+
+    transition:0.3s;
+}
+
+.section:hover{
+    transform:scale(1.02);
+    box-shadow:
+        0 0 30px #00f2fe,
+        0 0 60px #00f2fe;
+}
+
+/* SECTION TITLE */
+.section h2{
+    margin-bottom:15px;
+    color:#0A1F44;
+}
+
+/* LIST */
+.section ul{
+    padding-left:20px;
+}
+
+.section ul li{
+    margin-bottom:10px;
+}
+
+/* BACK BUTTON */
+.btn{
+    text-align:center;
+    margin-top:40px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px #00f2fe;
+}
+
+.btn a:hover{
+    background:#0ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    MediPredict – Musculoskeletal Diet Plan
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="content">
+
+<h1>Musculoskeletal Health Dietary Plan</h1>
+
+<!-- CORE -->
+<div class="section">
+    <h2>🌱 Core Nutrients for Musculoskeletal Health</h2>
+    <ul>
+        <li><b>Omega-3 fatty acids:</b> Reduce inflammation (fish, walnuts, flaxseeds, chia seeds)</li>
+        <li><b>Calcium & Vitamin D:</b> Strengthen bones (dairy, leafy greens, sunlight)</li>
+        <li><b>Magnesium & Zinc:</b> Support muscle and bone repair (seeds, lentils, grains)</li>
+        <li><b>Protein:</b> Builds and repairs muscle tissue (poultry, eggs, beans, yogurt)</li>
+        <li><b>Antioxidants:</b> Reduce oxidative stress (berries, citrus, turmeric, green tea)</li>
+    </ul>
+</div>
+
+<!-- RECOMMENDED -->
+<div class="section">
+    <h2>✅ Recommended Foods</h2>
+    <ul>
+        <li><b>Fruits & Vegetables:</b> Berries, cherries, grapes, avocados, spinach, broccoli, carrots</li>
+        <li><b>Healthy Fats:</b> Olive oil, nuts, seeds, fatty fish</li>
+        <li><b>Whole Grains:</b> Brown rice, oats, quinoa, whole wheat chapati</li>
+        <li><b>Proteins:</b> Cottage cheese, lentils, beans, chicken, salmon, tuna</li>
+        <li><b>Hydrating Foods:</b> Cucumber, watermelon, soups, herbal teas</li>
+    </ul>
+</div>
+
+<!-- AVOID -->
+<div class="section">
+    <h2>❌ Foods to Avoid</h2>
+    <ul>
+        <li>Processed foods (snacks, fried items)</li>
+        <li>Excess salt</li>
+        <li>Sugary foods and drinks</li>
+        <li>Excess red meat</li>
+    </ul>
+</div>
+
+<!-- MEAL PLAN -->
+<div class="section">
+    <h2>🍽️ Sample Daily Diet Plan</h2>
+    <ul>
+        <li><b>Morning:</b> Herbal tea + soaked almonds/walnuts</li>
+        <li><b>Breakfast:</b> Oats with berries OR ragi dosa</li>
+        <li><b>Mid-Morning:</b> Fruit + pumpkin seeds</li>
+        <li><b>Lunch:</b> Brown rice/chapati + dal + spinach + fish/chicken</li>
+        <li><b>Afternoon Snack:</b> Yogurt + flaxseeds or soup</li>
+        <li><b>Dinner:</b> Quinoa/ragi + vegetables + salad</li>
+        <li><b>Hydration:</b> 8–10 glasses water + green tea</li>
+    </ul>
+</div>
+
+<!-- TIPS -->
+<div class="section">
+    <h2>⚠️ Practical Tips</h2>
+    <ul>
+        <li>Maintain healthy weight</li>
+        <li>Prefer steaming, grilling, baking</li>
+        <li>Exercise and strength training</li>
+        <li>Ensure sunlight exposure for Vitamin D</li>
+    </ul>
+</div>
+
+<div class="btn">
+    <a href="/diet">⬅ Back</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

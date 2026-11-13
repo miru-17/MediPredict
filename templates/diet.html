@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diet Recommendations</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* ===== HEADER (FULL WIDTH) ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:#0d2a52;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:bold;
+    z-index:1000;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:220px;
+    height:calc(100vh - 70px);
+
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:220px;
+    margin-top:70px;
+
+    height:calc(100vh - 70px);
+    display:flex;
+    flex-direction:column;
+
+    background:url("/static/images/bg.png") no-repeat center center;
+    background-size:cover;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    padding:40px;
+    overflow-y:auto;
+}
+
+/* TITLE */
+.content h1{
+    text-align:center;
+    color:#0A1F44;
+    text-shadow:0 0 20px #00f2fe;
+    margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:30px;
+}
+
+/* CARD */
+.card{
+    text-decoration:none;
+    color:black;
+
+    padding:30px;
+    border-radius:20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 0 20px rgba(0,255,255,0.4);
+
+    text-align:center;
+    transition:0.3s;
+}
+
+/* ICON */
+.card span{
+    font-size:40px;
+    display:block;
+    margin-bottom:10px;
+}
+
+/* HOVER */
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:
+        0 0 30px #00f2fe,
+        0 0 60px #00f2fe;
+}
+
+/* TEXT */
+.card h2{
+    margin-top:10px;
+}
+
+/* BACK BUTTON */
+.btn{
+    text-align:center;
+    margin-top:40px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    MediPredict – Diet Recommendations
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="content">
+
+<h1>Select Diet Category</h1>
+
+<div class="grid">
+
+<a href="/diet_skin" class="card">
+    <span>🧴</span>
+    <h2>Skin Problems</h2>
+</a>
+
+<a href="/diet_respiratory" class="card">
+    <span>🌬️</span>
+    <h2>Respiratory Problems</h2>
+</a>
+
+<a href="/diet_heart" class="card">
+    <span>❤️</span>
+    <h2>Heart Problems</h2>
+</a>
+
+<a href="/diet_neuro" class="card">
+    <span>🧠</span>
+    <h2>Neurological Problems</h2>
+</a>
+
+<a href="/diet_musculo" class="card">
+    <span>🦴</span>
+    <h2>Musculoskeletal Problems</h2>
+</a>
+
+<a href="/diet_digestive" class="card">
+    <span>🍽️</span>
+    <h2>Digestive Problems</h2>
+</a>
+
+<a href="/diet_kidney" class="card">
+    <span>💧</span>
+    <h2>Kidney Problems</h2>
+</a>
+
+</div>
+
+<div class="btn">
+    <a href="/recommendations">⬅ Back</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

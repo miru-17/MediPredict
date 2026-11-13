@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Profile</title>
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+
+background-image:url("{{ url_for('static', filename='images/bg.png') }}");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+padding:40px;
+}
+
+.box{
+width:500px;
+margin:auto;
+margin-top:60px;
+background:rgba(255,255,255,0.95);
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,.25);
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#2563eb;
+color:white;
+border:none;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+box-shadow:0 0 15px #2563eb;
+}
+</style>
+
+
+<script>
+function calculateBMI(){
+
+let h = document.getElementById("height").value;
+let w = document.getElementById("weight").value;
+
+if(h && w){
+let bmi = w / ((h/100)*(h/100));
+document.getElementById("bmi").value = bmi.toFixed(2);
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Edit Profile</h2>
+
+<form method="POST">
+
+
+
+Age:
+<input type="number" name="age" value="{{ user.age }}">
+
+Gender:
+<select name="gender">
+<option {% if user.gender=="Male" %}selected{% endif %}>Male</option>
+<option {% if user.gender=="Female" %}selected{% endif %}>Female</option>
+<option {% if user.gender=="Other" %}selected{% endif %}>Other</option>
+</select>
+
+Height:
+<input type="number" id="height" name="height"
+value="{{ user.height }}" oninput="calculateBMI()">
+
+Weight:
+<input type="number" id="weight" name="weight"
+value="{{ user.weight }}" oninput="calculateBMI()">
+
+BMI:
+<input type="text" id="bmi" name="bmi"
+value="{{ user.bmi }}" readonly>
+
+<button type="submit">Update Profile</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:30px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:95px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+.main{
+margin-left:240px;
+margin-top:110px;
+padding:40px;
+}
+
+.symptom-box{
+
+background:white;
+width:1000px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+
+}
+
+.symptom{
+
+padding:12px;
+border-radius:8px;
+background:#f1f5f9;
+font-size:17px;
+
+}
+
+.symptom:hover{
+
+background:#dbeafe;
+
+}
+
+.next-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin-top:20px;
+
+}
+
+.prev-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#6b7280;
+color:white;
+cursor:pointer;
+margin-top:10px;
+
+}
+
+.progress{
+
+font-weight:bold;
+color:#2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#">View Health Recommendations</a>
+<a href="#">View Profile</a>
+<
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="symptom-box">
+
+<h2>Skin Symptoms</h2>
+
+<p class="progress">
+</p>
+
+
+<form method="POST" >
+
+<div class="grid">
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="yellow_crust_ooze">
+yellow_crust_ooze
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="red_sore_around_nose">
+red_sore_around_nose
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="blister">
+blister
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="inflammatory_nails">
+inflammatory_nails
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="small_dents_in_nails">
+small_dents_in_nails
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="silver_like_dusting">
+silver_like_dusting
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="skin_peeling">
+skin_peeling
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="scurring">
+scurring
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="blackheads">
+blackheads
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="pus_filled_pimples">
+pus_filled_pimples
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="dischromic _patches">
+dischromic _patches
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="nodal_skin_eruptions">
+nodal_skin_eruptions
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="skin_rash">
+skin_rash
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="itching">
+itching
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="brittle_nails">
+brittle_nails
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="bruising">
+bruising
+</label>
+
+</div>
+
+
+<button type="submit" class="next-btn">
+
+Next Category →
+
+</button>
+
+<button
+type="button"
+class="prev-btn"
+onclick="window.location.href='/symptoms/general'">
+
+← Previous
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

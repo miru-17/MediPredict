@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:30px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:95px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+.main{
+margin-left:240px;
+margin-top:110px;
+padding:40px;
+}
+
+.symptom-box{
+
+background:white;
+
+width:1000px;
+
+margin:auto;
+
+padding:40px;
+
+border-radius:15px;
+
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+margin-top:20px;
+
+}
+
+.symptom{
+
+padding:12px;
+
+border-radius:8px;
+
+background:#f1f5f9;
+
+font-size:17px;
+
+}
+
+.symptom:hover{
+
+background:#dbeafe;
+
+}
+
+.next-btn{
+
+width:100%;
+
+padding:14px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:8px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:20px;
+
+}
+
+.prev-btn{
+
+width:100%;
+
+padding:14px;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:8px;
+
+background:#6b7280;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+.progress{
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#"> View Health Recommendations</a>
+<a href="#">View Profile</a>
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="symptom-box">
+
+<h2>General Symptoms</h2>
+
+<p class="progress"></p>
+
+
+<form method="POST">
+
+<div class="grid">
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="fatigue">
+Fatigue
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="lethargy">
+Lethargy
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="malaise">
+Malaise
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="high_fever">
+High fever
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="mild_fever">
+Mild fever
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="weight_loss">
+Weight loss
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="weight_gain">
+Weight gain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="anxiety">
+Anxiety
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="depression">
+Depression
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="dizziness">
+Dizziness
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="loss_of_appetite">
+Loss of appetite
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="increased_appetite">
+Increased appetite
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="restlessness">
+Restlessness
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="irritability">
+Irritability
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="sweating">
+Sweating
+</label>
+
+</div>
+
+
+<button type="submit" class="next-btn">
+Next →
+</b>
+
+
+
+
+
+<button
+type="button"
+class="prev-btn"
+onclick="window.location.href='/predict/step4'">
+
+← Previous
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

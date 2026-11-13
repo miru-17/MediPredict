@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict Report</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:25px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+}
+
+.main{
+padding:40px;
+}
+
+.report-box{
+
+background:white;
+width:900px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.result{
+
+font-size:26px;
+font-weight:bold;
+color:#dc2626;
+margin-top:15px;
+
+}
+
+.section{
+margin-top:30px;
+}
+
+ul{
+columns:2;
+}
+
+li{
+margin:6px;
+}
+
+.btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin-top:25px;
+
+}
+
+.btn:hover{
+background:#1d4ed8;
+}
+
+.home{
+background:#059669;
+}
+
+.home:hover{
+background:#047857;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Prediction Report
+
+</div>
+
+<div class="main">
+
+<div class="report-box">
+
+<h2>Prediction Result</h2>
+
+<div class="section">
+
+<h3>Predicted Disease:</h3>
+
+<div class="result">
+
+{{disease if disease else "No prediction available"}}
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h3>Selected Symptoms:</h3>
+
+{% if symptoms %}
+
+<ul>
+
+{% for s in symptoms %}
+
+<li>{{s}}</li>
+
+{% endfor %}
+
+</ul>
+
+{% else %}
+
+<p>No symptoms selected</p>
+
+{% endif %}
+
+</div>
+
+
+<div class="section">
+
+<h3>Prediction Confidence:</h3>
+
+<p>
+
+{{confidence if confidence else "0"}} %
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>Risk Level:</h3>
+
+<p>
+
+{{risk if risk else "Unknown"}}
+
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h3>Advice:</h3>
+
+<p>
+
+{{advice if advice else "Consult a doctor for proper diagnosis."}}
+
+</p>
+
+</div>
+
+
+
+<a href="/download_report" class="btn btn-success">
+Download Report PDF
+</a>
+
+<button class="btn home"
+onclick="window.location.href='/dashboard'">
+
+Back to Dashboard
+
+</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

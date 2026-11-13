@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediPredict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<script>
+document.querySelectorAll(".accordion-header").forEach(button => {
+    button.addEventListener("click", () => {
+        const body = button.nextElementSibling;
+        body.style.display = body.style.display === "block" ? "none" : "block";
+    });
+});
+</script>
+<body>
+
+<div class="main-header">
+    <h1>MediPredict – Health Risk Analyser</h1>
+</div>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>MediPredict</h2>
+        <ul class="menu">
+           <li><a href="/predict">Predict Disease</a></li>
+            <li><a href="/history">Prediction History</a></li>
+            <li><a href="/health">view health recommendations</a></li>
+            <li><a href="/profile">profile</a></li>
+            <li><a href="/report">Download report</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
+
+</body>
+</html>

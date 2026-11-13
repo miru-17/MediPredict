@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background-image:url("/static/images/bg.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+
+/* Header */
+.header{
+background:#0d2a52;
+color:white;
+padding:35px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+}
+
+/* Sidebar */
+.sidebar{
+position:fixed;
+left:0;
+top:105px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+font-size:16px;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+/* Main */
+.main{
+margin-left:240px;
+margin-top:120px;
+padding:40px;
+}
+
+/* White Container */
+.profile-box{
+background:white;
+width:800px;
+margin:auto;
+padding:45px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.25);
+}
+
+/* Title */
+.profile-title{
+text-align:center;
+font-size:34px;
+font-weight:bold;
+color:#0d2a52;
+margin-bottom:30px;
+}
+
+/* Table */
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:16px;
+border-bottom:1px solid #ddd;
+text-align:left;
+font-size:20px;
+}
+
+th{
+width:35%;
+background:#f8fafc;
+font-weight:bold;
+color:#111827;
+}
+
+td{
+color:#374151;
+}
+
+/* Buttons */
+.btn{
+display:block;
+width:100%;
+padding:16px;
+margin-top:25px;
+text-align:center;
+background:#2563eb;
+color:white;
+font-size:20px;
+font-weight:bold;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.03);
+box-shadow:0 0 15px #2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+MediPredict – Health Risk Analyser
+</div>
+
+<div class="sidebar">
+<a href="/predict">Predict Disease</a>
+<a href="/recommendations">Health Recommendations</a>
+<a href="/profile">Profile</a>
+<a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+<div class="profile-box">
+
+<div class="profile-title">
+My Profile
+</div>
+
+<table>
+
+<tr>
+<th>Full Name</th>
+<td>{{ user.first_name }} {{ user.last_name }}</td>
+</tr>
+
+<tr>
+<th>Email</th>
+<td>{{ user.email }}</td>
+</tr>
+
+
+
+<tr>
+<th>Gender</th>
+<td>{{ user.gender }}</td>
+</tr>
+
+<tr>
+<th>Age</th>
+<td>{{ user.age }}</td>
+</tr>
+
+<tr>
+<th>Height</th>
+<td>{{ user.height }} cm</td>
+</tr>
+
+<tr>
+<th>Weight</th>
+<td>{{ user.weight }} kg</td>
+</tr>
+
+<tr>
+<th>BMI</th>
+<td>{{ user.bmi }}</td>
+</tr>
+
+</table>
+
+<a href="/predict" class="btn">Start New Prediction</a>
+
+<a href="/edit_profile" class="btn">Edit Profile</a>
+
+</div>
+</div>
+
+</body>
+</html>

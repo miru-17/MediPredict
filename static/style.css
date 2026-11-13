@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+.bg {
+    min-height: 100vh;
+    background: url("images/bg.png") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Signup container */
+.form-container {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 35px 40px;
+    width: 420px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Title */
+.form-container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* File input */
+.form-container input[type="file"] {
+    background: white;
+}
+
+/* Button */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 30px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #0056b3;
+}
+
+/* Login link */
+.switch {
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.switch a {
+    color: #00e6ff;
+    text-decoration: none;
+}
+
+/* Flash messages */
+.flash {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.flash.success { background: #28a745; }
+.flash.error { background: #dc3545; }

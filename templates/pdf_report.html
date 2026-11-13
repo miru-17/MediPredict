@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Health Report</title>
+
+<style>
+body{
+font-family:Arial;
+padding:40px;
+}
+
+h1{
+color:green;
+text-align:center;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+td,th{
+border:1px solid #000;
+padding:8px;
+}
+
+.section{
+margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>MediPredict Report</h1>
+
+<!-- Personal Info -->
+<div class="section">
+<h2>Personal Information</h2>
+
+<table>
+<tr><th>Name</th><td>{{ personal.name }}</td></tr>
+<tr><th>Age</th><td>{{ personal.age }}</td></tr>
+<tr><th>Gender</th><td>{{ personal.gender }}</td></tr>
+
+</table>
+</div>
+
+<!-- Medical History -->
+<div class="section">
+<h2>Medical History</h2>
+
+<table>
+<tr><th>Family History</th><td>{{ history.family_history }}</td></tr>
+
+<tr><th>Diabetes</th><td>{{ history.diabetes }}</td></tr>
+<tr><th>Sugar Level</th><td>{{ history.sugar_level or 'Not Available' }}</td></tr>
+
+<tr><th>Blood Pressure</th><td>{{ history.bp }}</td></tr>
+<tr><th>Systolic</th><td>{{ history.systolic or 'Not Available' }}</td></tr>
+<tr><th>Diastolic</th><td>{{ history.diastolic or 'Not Available' }}</td></tr>
+
+<tr><th>Heart Problem</th><td>{{ history.heart }}</td></tr>
+<tr><th>Heart Type</th><td>{{ history.heart_type or 'Not Available' }}</td></tr>
+<tr><th>Heart Rate</th><td>{{ history.heart_rate or 'Not Available' }}</td></tr>
+
+<tr><th>Cholesterol</th><td>{{ history.cholesterol or 'Not Available' }}</td></tr>
+<tr><th>Breathing Issue</th><td>{{ history.breath or 'Not Available' }}</td></tr>
+
+<tr><th>Surgery</th><td>{{ history.surgery }}</td></tr>
+<tr><th>Medication</th><td>{{ history.medication }}</td></tr>
+<tr><th>Allergy</th><td>{{ history.allergy }}</td></tr>
+</table>
+</div>
+<!-- Prediction -->
+<div class="section">
+<h2>Prediction Result</h2>
+
+<table>
+<tr><th>Predicted Disease</th><td>{{ report.disease }}</td></tr>
+<tr><th>Confidence</th><td>{{ report.confidence }}%</td></tr>
+<tr><th>Risk Level</th><td>{{ report.risk }}</td></tr>
+<tr><th>Advice</th><td>{{ report.advice }}</td></tr>
+<tr><th>Symptoms</th><td>{{ report.symptoms | join(', ') }}</td></tr>
+</table>
+</div>
+
+</body>
+</html>

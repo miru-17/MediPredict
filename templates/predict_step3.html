@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+
+background-image: url("/static/images/bg.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+/* Header */
+
+.header{
+
+background:#0d2a52;
+color:white;
+padding:40px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+position:fixed;
+left:0;
+top:110px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+padding-top:20px;
+
+}
+
+.sidebar a{
+
+display:block;
+color:white;
+padding:11px;
+text-decoration:none;
+font-size:16px;
+
+}
+
+.sidebar a:hover{
+
+background:#e11d48;
+
+}
+
+/* Main */
+
+.main{
+
+margin-left:240px;
+margin-top:120px;
+padding:40px;
+
+}
+
+/* Form */
+
+.form-container{
+
+background:white;
+width:550px;
+margin:auto;
+padding:50px;
+border-radius:10px;
+box-shadow:0px 0px 25px rgba(0,0,0,0.25);
+
+}
+
+.form-group{
+
+margin-bottom:22px;
+
+}
+
+label{
+
+font-weight:bold;
+display:block;
+margin-bottom:6px;
+
+}
+
+input, select{
+
+width:100%;
+padding:10px;
+border-radius:5px;
+border:1px solid #ccc;
+
+}
+
+/* Buttons */
+
+.next-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:6px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:0.3s;
+margin-top:20px;
+
+}
+
+.next-btn:hover{
+
+box-shadow:0 0 20px #2563eb;
+transform:scale(1.05);
+
+}
+
+.prev-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:6px;
+background:#6b7280;
+color:white;
+cursor:pointer;
+margin-top:12px;
+
+}
+
+.prev-btn:hover{
+
+box-shadow:0 0 15px #6b7280;
+
+}
+
+#diabetes_level,
+#bp_fields,
+#heart_fields{
+
+display:none;
+transition:0.3s;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+MediPredict – Health Risk Analyser
+</div>
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#">View Health Recommendations</a>
+<a href="#">Profile</a>
+<!--<a href="#">Download Report</a>-->
+<a href="#">Logout</a>
+
+</div>
+
+<div class="main">
+
+<div class="form-container">
+
+<h2>MEDICAL HISTORY</h2>
+
+<form action="/save_medical_history" method="POST">
+<div class="form-group">
+
+<label>Family history of chronic disease?</label>
+
+<select name="family_history">
+
+<option>No</option>
+<option>Diabetes</option>
+<option>Hypertension</option>
+<option>Heart Disease</option>
+<option>Cancer</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Do you have diabetes?</label>
+
+<select name="diabetes"
+onchange="toggleDiabetes(this.value)">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group"
+id="diabetes_level">
+
+<label>Blood sugar level (mg/dL)</label>
+
+<input type="number"
+name="sugar_level"
+placeholder="Example: 140">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Do you have high blood pressure?</label>
+
+<select name="bp"
+onchange="toggleBP(this.value)">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+
+<div id="bp_fields">
+
+<div class="form-group">
+
+<label>Systolic BP</label>
+
+<input type="number"
+name="systolic"
+placeholder="Example:120">
+
+</div>
+
+<div class="form-group">
+
+<label>Diastolic BP</label>
+
+<input type="number"
+name="diastolic"
+placeholder="Example:80">
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Any heart related problems?</label>
+
+<select name="heart"
+onchange="toggleHeart(this.value)">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+
+<div id="heart_fields">
+
+<div class="form-group">
+
+<label>Type of heart issue</label>
+
+<select name="heart_type">
+
+<option>Chest pain</option>
+<option>Arrhythmia</option>
+<option>Previous heart attack</option>
+<option>Valve problem</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Resting heart rate</label>
+
+<input type="number"
+name="heart_rate"
+placeholder="Example:72">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Cholesterol level</label>
+
+<input type="number"
+name="cholesterol"
+placeholder="Example:190">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Shortness of breath?</label>
+
+<select name="breath">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Have you undergone surgery?</label>
+
+<select name="surgery">
+
+<option>No</option>
+<option>Yes</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Current medications</label>
+
+<input type="text"
+name="medication"
+placeholder="Enter medicine names">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Any allergies?</label>
+
+<input type="text"
+name="allergy"
+placeholder="Food / Medicine allergy">
+
+</div>
+
+
+<button class="next-btn">
+
+Next →
+
+</button>
+
+
+<button
+type="button"
+class="prev-btn"
+onclick="window.location.href='/predict/step3'">
+
+← Previous
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleDiabetes(value){
+
+if(value=="Yes")
+document.getElementById("diabetes_level").style.display="block";
+
+else
+document.getElementById("diabetes_level").style.display="none";
+
+}
+
+function toggleBP(value){
+
+if(value=="Yes")
+document.getElementById("bp_fields").style.display="block";
+
+else
+document.getElementById("bp_fields").style.display="none";
+
+}
+
+function toggleHeart(value){
+
+if(value=="Yes")
+document.getElementById("heart_fields").style.display="block";
+
+else
+document.getElementById("heart_fields").style.display="none";
+
+}
+
+</script>
+
+</body>
+
+</html>

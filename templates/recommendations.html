@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Recommendations</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+}
+
+/* ===== MAIN AREA ===== */
+.main{
+    flex:1;
+    min-height:100vh;
+
+    /* YOUR BACKGROUND IMAGE */
+    background: url("/static/images/bg.png") no-repeat center center;
+
+    /* IMPORTANT SETTINGS */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+.header{
+    background:#0d2a52;
+    color:white;
+    padding:40px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ===== CONTENT ===== */
+.content{
+    padding:40px;
+    text-align:center;
+}
+
+/* TITLE */
+h1{
+    color:#0A1F44;
+    text-shadow:0 0 15px #00f2fe;
+    margin-bottom:40px;
+}
+
+/* CARDS */
+.card-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+
+    flex-wrap: nowrap;   /* IMPORTANT: keeps all cards in one row */
+}
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;   /* makes full card clickable */
+}
+
+/* CARD (UPDATED BIGGER SIZE) */
+.card{
+    width:300px;
+    padding:35px;
+    border-radius:20px;
+
+    /* TRANSPARENT GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.15);  /* very light transparency */
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* STRONG CONTRAST BORDER */
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    /* GLOW */
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.5),
+        0 0 30px rgba(0, 255, 255, 0.3);
+
+    transition: 0.4s ease-in-out;
+    text-align:center;
+}
+
+/* ICON IMAGE */
+.card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+/* hover same */
+.card:hover{
+    transform: translateY(-12px) scale(1.05);
+
+    /* brighter glow */
+    box-shadow:
+        0 0 25px #00f2fe,
+        0 0 60px #00f2fe,
+        0 0 100px #00f2fe;
+
+    /* slightly brighter glass on hover */
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    color:#0A1F44;
+    font-weight:bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card p{
+    font-size:14px;
+    opacity:0.85;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:40px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main">
+
+    <!-- HEADER -->
+    <div class="header">
+        MediPredict – HealthRisk Analyser
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <h1>Health Recommendations</h1>
+
+        <div class="card-wrapper">
+
+            <!-- Routine -->
+           <a href="/routine" class="card-link">
+               <div class="card">
+                  <img src="/static/images/routine.jpg">
+                   <h2>Daily Routine</h2>
+               </div>
+           </a>
+
+             <!-- Diet -->
+            <a href="/diet" class="card-link">
+                 <div class="card">
+                    <img src="/static/images/diet.jpeg">
+                    <h2>Diet Plan</h2>
+                 </div>
+            </a>
+
+            <!-- Exercise -->
+           <a href="/exercise" class="card-link">
+                <div class="card">
+                    <img src="/static/images/exercise.jpeg">
+                    <h2>Exercises</h2>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="btn">
+            <a href="/dashboard">⬅ Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

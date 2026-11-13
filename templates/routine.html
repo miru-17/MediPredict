@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily Routine</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+}
+/* ===== SIDEBAR ===== */
+.sidebar{
+    position:fixed;
+    top:70px;              /* push below header */
+    left:0;
+
+    width:220px;
+    height:calc(100vh - 70px);
+
+    background:#e91e63;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:220px;
+    margin-top:70px;
+
+    height:calc(100vh - 70px);
+    overflow:hidden;
+
+    background: url("/static/images/bg.png") no-repeat center center;
+    background-size: cover;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+
+    background:#0d2a52;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:bold;
+
+    z-index:1000;   /* sits above sidebar */
+}
+
+/* ===== CONTENT ===== */
+.content{
+    padding:40px;
+    overflow-y:auto;
+    flex:1;
+}
+/* TITLE */
+.content h1{
+    text-align:center;
+    color:#0A1F44;
+    text-shadow:0 0 20px #00f2fe;
+    margin-bottom:40px;
+}
+
+/* SECTION TITLE */
+.section-title{
+    margin:30px 0 10px 20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* TIMELINE */
+.timeline{
+    display:flex;
+    align-items:center;
+    margin:15px 20px;
+}
+
+/* TIME */
+.time{
+    width:180px;
+    font-weight:bold;
+    color:#0d2a52;
+    text-shadow:0 0 10px #00f2fe;
+}
+
+/* CARD BAR */
+.card{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px 20px;
+    border-radius:15px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 0 15px rgba(0,255,255,0.4);
+
+    transition:0.3s;
+}
+
+/* ICON */
+.card span{
+    font-size:20px;
+}
+
+/* HOVER */
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:
+        0 0 25px #00f2fe,
+        0 0 60px #00f2fe;
+}
+
+/* COLOR THEMES */
+.morning .card{
+    border-left:6px solid #00c6ff;
+}
+
+.afternoon .card{
+    border-left:6px solid #ff9800;
+}
+
+.evening .card{
+    border-left:6px solid #9c27b0;
+}
+
+/* ANIMATION */
+.card{
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BACK BUTTON */
+.btn{
+    text-align:center;
+    margin-top:40px;
+}
+
+.btn a{
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#00f2fe;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px #00f2fe;
+}
+
+.btn a:hover{
+    background:#0ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Medipredict</h2>
+    <ul>
+        <li><a href="/predict">Predict Disease</a></li>
+        <li><a href="/recommendations">View Health Recommendations</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- HEADER -->
+<div class="header">
+    MediPredict – Daily Routine
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<h1>Healthy Daily Routine</h1>
+
+<!-- MORNING -->
+<h2 class="section-title">🌅 Morning</h2>
+
+<div class="timeline morning">
+    <div class="time">06:00 - 06:30 AM</div>
+    <div class="card"><span>💧</span> Wake up at the same time, drink 1–2 glasses of water (optionally with lemon), and get direct morning sunlight to regulate your circadian rhythm.</div>
+</div>
+
+<div class="timeline morning">
+    <div class="time">06:30 - 07:15 AM</div>
+    <div class="card"><span>🧘</span>  Exercise (yoga, brisk walk, or HIIT), or practice 10-20 minutes of meditation for stress reduction.</div>
+</div>
+
+<div class="timeline morning">
+    <div class="time">07:30 - 08:00 AM</div>
+    <div class="card"><span>🍳</span> High-protein, healthy breakfast (e.g., oats, eggs, fruit).</div>
+</div>
+
+<div class="timeline morning">
+    <div class="time">08:00 AM</div>
+    <div class="card"><span>🪥</span> Daily hygiene (brushing/flossing)</div>
+</div>
+
+<!-- AFTERNOON -->
+<h2 class="section-title">☀️ Afternoon</h2>
+
+<div class="timeline afternoon">
+    <div class="time">10:30 AM</div>
+    <div class="card"><span>🥜</span> Short, healthy snacks (e.g., nuts, fruits).</div>
+</div>
+
+<div class="timeline afternoon">
+    <div class="time">12:30 - 01:30 PM</div>
+    <div class="card"><span>🍽️</span>  Lunch: Balanced meal with lean protein, fiber-rich vegetables, and whole grains.</div>
+</div>
+
+<div class="timeline afternoon">
+    <div class="time">01:30 - 02:00 PM</div>
+    <div class="card"><span>🚶</span> Short walk or "mini-movement breaks" every hour to reduce sedentary time.</div>
+</div>
+
+<div class="timeline afternoon">
+    <div class="time">03:30 PM</div>
+    <div class="card"><span>🍎</span> Short, healthy snacks (e.g., nuts, fruits).</div>
+</div>
+
+<div class="timeline afternoon">
+    <div class="time">Throughout</div>
+    <div class="card"><span>💦</span>  Keep a water bottle handy, drinking at regular intervals.</div>
+</div>
+
+<!-- EVENING -->
+<h2 class="section-title">🌙 Evening</h2>
+
+<div class="timeline evening">
+    <div class="time">07:00 - 08:00 PM</div>
+    <div class="card"><span>🥗</span>  Light dinner (try to finish at least 2-3 hours before bed).</div>
+</div>
+
+<div class="timeline evening">
+    <div class="time">08:00 - 09:30 PM</div>
+    <div class="card"><span>📖</span>  Unwind: Screen-free time (limit social media/phones), reading, or socializing with family</div>
+</div>
+
+<div class="timeline evening">
+    <div class="time">09:30 - 10:00 PM</div>
+    <div class="card"><span>🌙</span>  Prepare for sleep (cool, dark, quiet room).</div>
+</div>
+
+<div class="btn">
+    <a href="/recommendations">⬅ Back</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

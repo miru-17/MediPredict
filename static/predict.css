@@ -1,0 +1,35 @@
+.health-container{
+
+width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:10px;
+
+}
+
+.step{
+display:none;
+}
+
+#step1{
+display:block;
+}
+
+input, select{
+
+width:100%;
+padding:10px;
+margin-bottom:15px;
+
+}
+
+button{
+
+padding:10px 20px;
+background:#2b6cb0;
+color:white;
+border:none;
+border-radius:5px;
+
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MediPredict</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background-image:url("{{url_for('static',filename='images/bg.png')}}");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.header{
+background:#0d2a52;
+color:white;
+padding:30px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+position:fixed;
+top:0;
+width:100%;
+}
+
+.sidebar{
+position:fixed;
+left:0;
+top:95px;
+width:240px;
+height:100%;
+background:#ff2a5a;
+}
+
+.sidebar a{
+display:block;
+color:white;
+padding:14px;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#e11d48;
+}
+
+.main{
+margin-left:240px;
+margin-top:110px;
+padding:40px;
+}
+
+.symptom-box{
+
+background:white;
+width:1000px;
+margin:auto;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.2);
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px;
+
+}
+
+.symptom{
+
+padding:12px;
+border-radius:8px;
+background:#f1f5f9;
+font-size:17px;
+
+}
+
+.symptom:hover{
+
+background:#dbeafe;
+
+}
+
+.next-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+margin-top:20px;
+
+}
+
+.prev-btn{
+
+width:100%;
+padding:14px;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#6b7280;
+color:white;
+cursor:pointer;
+margin-top:10px;
+
+}
+
+.progress{
+
+font-weight:bold;
+color:#2563eb;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+MediPredict – Health Risk Analyser
+
+</div>
+
+
+<div class="sidebar">
+
+<a href="#">Predict Disease</a>
+<!--<a href="#">Prediction History</a>-->
+<a href="#">View Health Recommendations</a>
+<a href="#">View Profile</a>
+<a href="#">Logout</a>
+
+</div>
+
+
+<div class="main">
+
+<div class="symptom-box">
+
+<h2>Digestive Symptoms</h2>
+
+<p class="progress">
+</p>
+
+
+<form method="POST">
+
+<div class="grid">
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="distention_of_abdomen">
+distention_of_abdomen
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="stomach_bleeding">
+stomach_bleeding
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="belly_pain">
+belly_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="passage_of_gases">
+passage_of_gases
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="irritation_in_anus">
+irritation_in_anus
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="bloody_stool">
+bloody_stool
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="pain_in_anal_region">
+pain_in_anal_region
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="pain_during_bowel_movements">
+pain_during_bowel_movements
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="diarrhoea">
+diarrhoea
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="abdominal_pain">
+abdominal_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="constipation">
+constipation
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="nausea">
+nausea
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="vomiting">
+vomiting
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="indigestion">
+indigestion
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="acidity">
+acidity
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="stomach_pain">
+stomach_pain
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="swelling_of_stomach">
+swelling_of_stomach
+</label>
+
+<label class="symptom">
+<input type="checkbox" name="symptoms" value="dehydration">
+dehydration
+</label>
+
+</div>
+
+
+<button type="submit" class="next-btn">
+
+Next Category →
+
+</button>
+    <button
+type="button"
+class="prev-btn"
+onclick="window.location.href='/symptoms/respiratory'">
+
+← Previous
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

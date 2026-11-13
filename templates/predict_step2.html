@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MediPredict</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image:url("/static/images/bg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* Header */
+.header{
+    background:#0d2a52;
+    color:white;
+    padding:40px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:110px;
+    width:240px;
+    height:100%;
+    background:#ff2a5a;
+    padding-top:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    padding:11px;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.sidebar a:hover{
+    background:#e11d48;
+}
+
+/* Main */
+.main{
+    margin-left:240px;
+    margin-top:120px;
+    padding:40px;
+}
+
+/* Form */
+.form-container{
+    background:white;
+    width:500px;
+    margin:auto;
+    padding:50px;
+    border-radius:10px;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.2);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-bottom:6px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+/* Buttons */
+.next-btn{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:15px;
+}
+
+.next-btn:hover{
+    box-shadow:0 0 15px #2563eb;
+    transform:scale(1.05);
+}
+
+.prev-btn{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    background:#6b7280;
+    color:white;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.prev-btn:hover{
+    box-shadow:0 0 10px #6b7280;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+MediPredict – Health Risk Analyser
+</div>
+
+<div class="sidebar">
+<a href="#">Predict Disease</a>
+<a href="#">View Health Recommendations</a>
+<a href="#">Profile</a>
+<!--<a href="#">Download Report</a>-->
+<a href="#">Logout</a>
+</div>
+
+<div class="main">
+
+<div class="form-container">
+
+<h2>LIFESTYLE INFORMATION</h2>
+
+<form action="/save_lifestyle_info" method="POST">
+
+<div class="form-group">
+<label>Do you smoke?</label>
+<select name="diabetes" required>
+<option value="">Select Option</option>
+<option value="No">No</option>
+<option value="Occasionally">Occasionally</option>
+<option value="Regularly">Regularly</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Do you consume alcohol?</label>
+<select name="bp" required>
+<option value="">Select Option</option>
+<option value="No">No</option>
+<option value="Occasionally">Occasionally</option>
+<option value="Regularly">Regularly</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Do you engage in physical activity?</label>
+<select name="thyroid" required>
+<option value="">Select Option</option>
+<option value="No">No</option>
+<option value="Yes">Yes</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>If yes, what type of activity?</label>
+<input type="text"
+name="allergy"
+placeholder="Walking, Running, Gym, Sports">
+</div>
+
+<div class="form-group">
+<label>Average sleep hours per day</label>
+<input type="number"
+name="sleep"
+placeholder="Example: 7">
+</div>
+
+
+
+<button type="submit" class="next-btn">Next →</button>
+
+<button type="button"
+class="prev-btn"
+onclick="window.location.href='/predict'">
+
+← Previous
+
+</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>

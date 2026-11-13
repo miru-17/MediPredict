@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Analyser Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+<!-- ===== HEADER ===== -->
+<header class="main-header">
+    <h1>MediPredict – HealthRisk Analyser</h1>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Medipredict</h2>
+        <ul>
+            <li><a href="/predict">Predict Disease</a></li>
+            <!--<li><a href="/history">Prediction History</a></li>-->
+            <li><a href="{{ url_for('recommendations') }}" class="card">
+    <h3>View Health Recommendations</h3>
+            </a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <!--<li><a href="/report">Download report</a></li>-->
+            <li><a href="/logout" class="logout-btn">Logout</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+
+        <div class="main dashboard-bg">
+
+    <div class="overlay-content">
+        <h1>MediPredict – HealthRisk Analyser</h1>
+
+        <p>
+            MediPredict is an Web based health risk prediction application designed to help
+            users understand possible health risks based on the symptoms they
+            experience. By using machine learning techniques, the system
+            analyzes symptom patterns and provides disease predictions along
+            with confidence levels.
+        </p>
+
+        <p>
+            This application helps users gain early awareness of potential
+            health conditions and encourages timely medical consultation.
+            MediPredict is meant for informational purposes only and does not
+            replace professional medical advice.
+        </p>
+<p>
+    MediPredict is especially useful for early awareness and preventive care, allowing
+    users to identify potential health concerns . Based on the
+    predictions, users are encouraged to take timely action, such as consulting a
+    medical professional, adopting healthier lifestyle habits, or monitoring symptoms
+    more closely.
+</p>
+    </div>
+
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
